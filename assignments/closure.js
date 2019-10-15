@@ -4,9 +4,21 @@
 // that manipulates variables defined in the outer scope.
 // The outer scope can be a parent function, or the top level of the script.
 
+var myvar = "something"; // <-- Global scope
+
+function myfunction() {
+  console.log(myvar); // <--- Local scope
+
+  var newVar = "var into the local scope";
+
+  function nestedFunction() {
+    var last = "last nested var";
+
+    console.log(newVar);
+  }
+}
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
-
 
 // ==== Challenge 2: Implement a "counter maker" function ====
 const counterMaker = () => {
@@ -20,6 +32,10 @@ const counterMaker = () => {
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
+let count = 0;
+function counter() {
+  return count;
+}
 
 // ==== Challenge 3: Make `counterMaker` more sophisticated ====
 // It should have a `limit` parameter. Any counters we make with `counterMaker`

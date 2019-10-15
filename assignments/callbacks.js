@@ -1,6 +1,6 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
 
 /* 
 
@@ -39,10 +39,16 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
   console.log(test2); // "this Pencil is worth a million dollars!"
 */
 
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
+
+
+ // getLength passes the length of the array into the callback.
+
+
 
 function getLength(arr, cb) {
   return cb(arr);
-  // getLength passes the length of the array into the callback.
 }
 
 function getL(arr){
@@ -52,9 +58,14 @@ function getL(arr){
 console.log("testing getLength function", getLength(items, getL));
 
 
+
+
+
+  // last passes the last item of the array into the callback.
+
 function last(arr, cb) {
   return cb(arr);
-  // last passes the last item of the array into the callback.
+
 }
 
 function lastItemArray (arr) {
@@ -63,32 +74,58 @@ function lastItemArray (arr) {
 
 console.log("testing lastItemArray function" , lastItemArray (items, last));
 
+
+
+
+ // sumNums adds two numbers (x, y) and passes the result to the callback.
+
 function sumNums(x, y, cb) {
   return cb(x,y);
-  // sumNums adds two numbers (x, y) and passes the result to the callback.
 }
-function addNumbers (x,y) {
-  return(x+y, sumNums);
-}
-console.log("testing addNumbers function" , addNumbers (items, sumNums));
 
+function addNumbers(x,y) {
+  return x + y ;
+}
+
+console.log("testing addNumbers function" , sumNums(3, 2, addNumbers));
+
+
+
+
+ // multiplyNums multiplies two numbers and passes the result to the callback.
 
 function multiplyNums(x, y, cb) {
   return cb(x,y);
-  // multiplyNums multiplies two numbers and passes the result to the callback.
-}
-function doublingNumbers (x,y) {
-  return(x*y, multiplyNums);
-}
-console.log("testing doublingNumbers function" , doublingNumbers(items, multiplyNums));
 
+}
+
+function multiplyNums(x,y) {
+  return x * y ;
+}
+
+console.log("testing doublingNumbers function" , multiplyNums(4, 5, multiplyNums));
+
+
+
+
+// const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
+
+
+  // contains checks if an item is present inside of the given array/list.
+  // Pass true to the callback if it is, otherwise pass false.
 
 function contains(item, list, cb) {
   return cb(item, list);
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
 }
 
+function checks(item, list){
+  for(var i = 0; i < list.length; i++){
+    list[i] === item ? true : false
+  }
+}
+
+console.log(contains('Pencil', items, checks))
 
 
 /* STRETCH PROBLEM */
