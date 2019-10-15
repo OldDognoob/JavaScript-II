@@ -121,11 +121,11 @@ function contains(item, list, cb) {
 
 function checks(item, list){
   for(var i = 0; i < list.length; i++){
-    list[i] === item ? true : false
+    return console.log(list[i] === item)
   }
 }
 
-console.log(contains('Pencil', items, checks))
+console.log(contains('Pencil', items, checks));
 
 
 /* STRETCH PROBLEM */
