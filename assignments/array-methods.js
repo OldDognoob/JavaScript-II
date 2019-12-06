@@ -68,10 +68,9 @@ console.log(fullNames);
 
 let firstNamesAllCaps = [];
 
-runners.map((runners, firstNamesAllCaps) => { return runners.first_name.toUpperCase(); });
+runners.map((runner)=> firstNamesAllCaps.push(`First name: ${runner.first_name}` .toUpperCase()))
 
 console.log(firstNamesAllCaps);
-
 
 
 // ==== Challenge 3: Use .filter() ====
