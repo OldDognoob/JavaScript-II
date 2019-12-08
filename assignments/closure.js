@@ -82,10 +82,10 @@ const counterFactory = () => {
   return resObj;
 };
 
-let foo = counterFactory();
+let voodoo = counterFactory();
 
-console.log(foo.decrement());
-console.log(foo.increment());
+console.log(voodoo.decrement());
+console.log(voodoo.increment());
 
 
 
